@@ -1,0 +1,62 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #333;
+}
+
+.game-info {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+#game-board {
+    display: grid;
+    /* 列数和行数会由 JS 设置 */
+    gap: 5px;
+    padding: 10px;
+    background-color: #ccc;
+    border: 2px solid #999;
+    border-radius: 5px;
+    /* 防止选中内容 */
+    user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+}
+
+.tile {
+    width: 50px; /* 格子宽度 */
+    height: 50px; /* 格子高度 */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px; /* 图标或文字大小 */
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.tile:hover {
+    background-color: #eee;
+}
+
+.tile.selected {
+    background-color: #a0e9ff; /* 选中时的背景色 */
+    border-color: #007bff;
+    transform: scale(1.05); /* 轻微放大效果 */
+}
+
+.tile.hidden {
+    visibility: hidden; /* 隐藏已消除的格子 */
+    cursor: default;
+}
